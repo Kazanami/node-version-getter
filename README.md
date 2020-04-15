@@ -3,3 +3,29 @@
 
 
 Node.JS Verison Auto Getter
+
+## How to Use?
+
+### Get Node.js LTS Version
+
+Use curl  
+```
+curl -q -o - https://raw.githubusercontent.com/Kazanami/node-version-getter/master/now_lts
+```
+
+Use wget
+```
+wget 
+```
+
+### Get Node.js Latest Version
+
+Use curl  
+```
+curl -q -o - https://raw.githubusercontent.com/Kazanami/node-version-getter/master/now_latest
+```
+
+Use wget
+```
+wget 
+```
