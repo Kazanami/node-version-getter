@@ -25,7 +25,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: git remote set-url origin "https://Kazanami:${{secrets.GITHUB_TOKEN}}@github.com/Kazanami/git-action-test"
+    - run: git remote set-url origin "https://Kazanami:${{secrets.GITHUB_TOKEN}}@github.com/Kazanami/node-version-getter"
     - run: git config user.name "Github Action Runner"
     - run: git config user.email "github-action-runner@example.com"
     - run: npm i
