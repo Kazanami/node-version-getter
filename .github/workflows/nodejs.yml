@@ -6,7 +6,9 @@ name: Node.js CI (Get Node Version)
 on:
   schedule:
   - cron: '0 0 */1 * *'
-
+  push:
+    branches: [ master ]
+    
 jobs:
   get-version:
     name: get-version
