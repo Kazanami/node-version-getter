@@ -6,6 +6,9 @@ name: Node.js CI (Get Node Version)
 on:
   schedule:
   - cron: '0 0 * * *'
+
+  issues:
+    types: [opened, edited]
     
 jobs:
   get-version:
@@ -21,15 +24,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: git remote set-url origin "https://Kazanami:${{secrets.GITHUB_TOKEN}}@github.com/Kazanami/node-version-getter"
-    - run: git config user.name "Github Action Runner"
-    - run: git config user.email "github-action-runner@example.com"
-    - run: npm i
-    - run: node main.js
-    - run: git add .
-    - run: git commit -m "recursive run"
-    - run: git push origin master
       env:
         CI: true
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: | 
+          npm i  &&\
+          node main.js &&\
+          bash ./update.sh
+          
+           
