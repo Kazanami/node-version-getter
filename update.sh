@@ -1,5 +1,5 @@
 #!/bin/bash
-git remote set-url origin "https://Kazanami:${GITHUB_TOKEN}@github.com/Kazanami/git-action-tester"
+git remote set-url origin "https://Kazanami:${GITHUB_TOKEN}@github.com/Kazanami/node-version-getter"
 git config user.name "Github Action Runner"
 git config user.email "github-action-runner@example.com"
 git add .
