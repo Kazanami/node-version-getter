@@ -5,20 +5,20 @@ name: Nodebrew Support Script CI
 
 on:
   push:
-   branches: [ master ]
-   paths:
-     - 'node_install.sh'
+    branches: [ master]
+    paths:
+      - 'node_install.sh'
 
 jobs:
-   test:
-     runs-on: ubuntu-latest
-     steps:
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       - name: Setup nodebrew
         run: |
-            curl -L git.io/nodebrew | perl - setup
-            echo "export PATH=$HOME/.nodebrew/current/bin:$PATH" >> ~/.bashrc
-            source ~/.bashrc
-      - name: Check Successfull Install nodebrew
+          curl -L git.io/nodebrew | perl - setup
+          echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
+          source ~/.bashrc
+      - name: Check Sucessfull Install nodebrew
         run: |
-            which nodebrew
+          which nodebrew 
