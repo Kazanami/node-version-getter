@@ -35,4 +35,6 @@ jobs:
             source ~/.bashrc
             which nodebrew
     - name: Testing Args on ${{ matrix.version }}
-      run: bash -x ./node_install.sh ${{ matrix.version }}
+      run: |
+        export PATH=$HOME/.nodebrew/current/bin:$PATH
+        bash -x ./node_install.sh ${{ matrix.version }}
