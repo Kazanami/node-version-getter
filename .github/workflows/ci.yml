@@ -15,10 +15,10 @@ jobs:
      steps:
       - uses: actions/checkout@v2
       - name: Setup nodebrew
-         run: |
+        run: |
             curl -L git.io/nodebrew | perl - setup
             echo "export PATH=$HOME/.nodebrew/current/bin:$PATH" >> ~/.bashrc
             source ~/.bashrc
       - name: Check Successfull Install nodebrew
-         run: |
+        run: |
             which nodebrew
