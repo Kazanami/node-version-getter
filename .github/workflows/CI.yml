@@ -27,6 +27,6 @@ jobs:
 
     - name: Check Successfull Install nodebrew
       run: |
-            echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
+            export PATH=$HOME/.nodebrew/current/bin:$PATH
             source ~/.bashrc
             which nodebrew
