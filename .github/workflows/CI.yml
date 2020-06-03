@@ -11,9 +11,13 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  setup:
+  test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ['lts', 'stable', 'latest', '']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,3 +34,5 @@ jobs:
             export PATH=$HOME/.nodebrew/current/bin:$PATH
             source ~/.bashrc
             which nodebrew
+    - name: Testing Args on ${{ matrix.version }}
+      run: bash -x ./node_install.sh ${{ matrix.version }}
