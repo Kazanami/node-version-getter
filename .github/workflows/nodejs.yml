@@ -33,5 +33,3 @@ jobs:
           npm i  &&\
           node main.js &&\
           bash ./update.sh
-          
-           
